@@ -1,0 +1,30 @@
+<ion-view hide-nav-bar="true">
+  <ion-header-bar align-title="center" class="bar-stable  bar-dark">
+    <div class="buttons">
+
+    </div>
+    <h1 class="title">详情</h1>
+    <div class="buttons">
+      <button class="button button-icon icon ion-android-share-alt" ng-click="shareFn()"></button>
+    </div>
+  </ion-header-bar>
+
+    <ion-content style="margin: 10px 15px 15px">
+
+
+
+        <h3>{{title}}</h3>
+      <img style="width: 100%;" src="{{thumbnail}}" alt="">
+
+
+      <style>
+        #contents img{
+          width: 100%;
+        }
+      </style>
+        <div id="contents" style="font-size: 20px;line-height: 150%;color: dimgrey;">
+
+        </div>
+
+    </ion-content>
+</ion-view>

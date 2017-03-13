@@ -1,0 +1,21 @@
+<ion-view hide-nav-bar="true">
+  <ion-header-bar class="bar-assertive">
+    <h1 class="title">视频</h1>
+  </ion-header-bar>
+  <ion-content style="margin-top: 5px">
+    <!--下拉刷新-->
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+    <div style="margin: 0px 10px;  margin-bottom: 5px" class="card">
+      <div ng-click="bvideo($index)" ng-repeat="item in shuju"style="padding-bottom: 15px;text-align: center;">
+        <img style="width: 100%;height: 170px;" src="{{item.imageList[0].image}}" alt="">
+        <span style="font-size: 20px;">{{item.title}}</span>
+      </div>
+      <span></span>
+    </div>
+
+
+    <!-- ion-infinite-scroll 上拉加载数据指令 distance默认1% nf-if的值为false时，就禁止执行on-infinite  -->
+    <ion-infinite-scroll on-infinite="loadMore()" immediate-check=false></ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>

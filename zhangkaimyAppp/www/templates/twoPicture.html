@@ -1,0 +1,50 @@
+<ion-view>
+  <ion-nav-title>评论</ion-nav-title>
+  <ion-content>
+      <div>
+        <img style="width: 100%" src="{{picture}}" alt="">
+      </div>
+
+
+    <h3 style="margin: 30px 10px;">热门评论</h3>
+
+    <div style="margin: 3px 10px ; padding-bottom: 10px;border-bottom: 1px solid #cccccc" ng-repeat="item in hotData">
+      <img ng-click="hotpictureDetailFn($index)" style="border-radius: 50%;width: 50px;float: left" src="{{item.user_profile_image_url}}">
+      <div style="float: left;margin-left: 20px">
+          <h4>{{item.user_name}}</h4>
+      </div>
+      <div style="float: right;margin: 10px 30px">
+        <span ng-click="remenzanFn($index)"><img  src="img/thumb.png" alt=""> {{item.digg_count}}</span>
+      </div>
+
+      <div style="clear: both"></div>
+      <p style="margin-left: 70px">{{item.text}}</p>
+
+    </div>
+
+
+
+
+    <h3 style="margin: 30px 10px;">最新评论</h3>
+
+    <div style="margin: 3px 10px ; padding-bottom: 10px;border-bottom: 1px solid #cccccc" ng-repeat="item in newData">
+      <img ng-click="pictureDetailFn($index)" style="border-radius: 50%;width: 50px;float: left" src="{{item.user_profile_image_url}}">
+      <div style="float: left;margin-left: 20px">
+        <h4>{{item.user_name}}</h4>
+      </div>
+      <div style="float: right;margin: 10px 30px">
+        <span ng-click="zanFn($index)"><img  src="img/thumb.png" alt=""> {{item.digg_count}}</span>
+      </div>
+
+      <div style="clear: both"></div>
+      <p style="margin-left: 70px">{{item.text}}</p>
+
+    </div>
+
+    <!-- ion-infinite-scroll 上拉加载数据指令 distance默认1% nf-if的值为false时，就禁止执行on-infinite  -->
+    <ion-infinite-scroll on-infinite="loadMore()" immediate-check=false></ion-infinite-scroll>
+
+
+  </ion-content>
+</ion-view>
+

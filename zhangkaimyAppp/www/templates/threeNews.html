@@ -1,0 +1,45 @@
+<ion-view>
+  <ion-view view-title="评论" hide-nav-bar="true" >
+    <ion-header-bar class="bar-assertive" ng-if="show==true" ng-style="{opacity:transrate}">
+      <button style="position: absolute;z-index: 10" ng-click="goBack()" class="button button-icon icon ion-arrow-return-left"></button>
+      <h1 class="title">评论</h1>
+    </ion-header-bar>
+    <ion-content on-scroll="xxx()">
+    <style>
+    </style>
+    <div style="position: relative">
+      <button style="position: absolute;z-index: 10" ng-click="goBack()" class="button button-icon icon ion-arrow-return-left button-light"></button>
+      <div style="width: 100%; background:url({{expert.picurl}});background-size: 100%;padding: 100px;opacity: 0.6"></div>
+      <div style="width: 270px">
+        <p id="myP">{{expert.alias}}</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 5px">
+        <img style="width: 50px;border-radius: 50%;border: 2px solid white;" src="{{expert.headpicurl}}" alt="">
+         <div style="margin-left: 60px;margin-top: -50px">
+           <span>{{expert.name}} | {{expert.title}}</span>
+           <div>{{expert.description}}</div>
+         </div>
+    </div>
+      <div>
+      <span style="margin-left: 10px;margin-top: -5px">{{expert.questionCount}} 提问 · </span> <span>{{expert.answerCount}} 回复</span>
+      </div>
+
+      <!--评论-->
+      <div class="card" ng-repeat="item in pinglun" style="padding: 10px">
+        <div style="border-bottom: 1px dashed #cccccc;padding-bottom: 20px">
+          <img style="width: 50px;border-radius: 50%;border: 2px solid white;margin-top: 20px;" src="{{item.question.userHeadPicUrl}}" alt="">
+          <div style="margin-left: 60px;margin-top: -50px;">
+            <span>{{item.question.userName}}</span>
+            <div>{{item.question.content}}</div>
+          </div>
+        </div>
+
+          <img style="width: 50px;border-radius: 50%;border: 2px solid white;margin-top: 30px" src="{{item.answer.specialistHeadPicUrl}}" alt="">
+          <div style="margin-left: 60px;margin-top: -50px">
+            <span>{{item.answer.specialistName}}</span>
+            <div>{{item.answer.content}}</div>
+          </div>
+      </div>
+    </ion-content>
+</ion-view>

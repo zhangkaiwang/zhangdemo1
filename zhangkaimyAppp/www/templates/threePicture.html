@@ -1,0 +1,28 @@
+<ion-view>
+  <ion-nav-title>个人主页</ion-nav-title>
+  <ion-content>
+    <div>
+      <img style="width: 100%;height: 200px;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1488114469588&di=0949cccb254fb4d358b360b9d6b4c130&imgtype=0&src=http%3A%2F%2Fstatic4.photo.sina.com.cn%2Fmiddle%2F4baf839ax8a21b7047043%26690" alt="">
+    </div>
+
+    <div style="position:relative;">
+      <img style="width: 50px ; height: 50px;border-radius: 13px;position: absolute;top: -35px;left: 10px;" src="{{data.avatar_url}}" alt="">
+      <span style="font-size: 10px; color:white;position: absolute;top: -25px;left: 75px;">{{data.name}}</span>
+      <div style="position: absolute;right: 10px;border-radius: 20%; border:1px solid #cccccc;padding: 2px 5px"><img style="width: 20px;" src="img/guanzhu.png" alt=""> 关注</div>
+    </div>
+    <div style="clear: both"></div>
+
+    <style>
+      .guanzhu span{
+        color:rgb(37 , 170 ,226) ;
+      }
+    </style>
+    <div class="guanzhu" style="margin-top: 20px;margin-left: 10px">
+      <span>关注</span> 3 |
+      <span>粉丝</span> 4 |
+      <span>订阅</span> 4 |
+    </div>
+
+    <div style="border-bottom: 1px solid #CACACA ;padding: 10px 0px"><span style="margin-left: 10px;font-size: 10px;">{{data.description}}</span></div>
+  </ion-content>
+</ion-view>
